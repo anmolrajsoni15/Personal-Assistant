@@ -6,18 +6,14 @@ import requests
 import datetime
 import speech_recognition as sr
 import wikipedia
-# import webbrowser
 import os
-# import smtplib
 import pywhatkit as kit
 import pyjokes
 import ctypes
 import winshell
 import psutil
-import pywikihow
 import speedtest
 import win32com.client as winc1
-# from pytube import YouTube
 
 contacts = {'''You can put contacts here as a dictonary :- "name":"phone no." '''}
 
@@ -261,24 +257,6 @@ def TaskExecution():
             speak("Opening Sir")
             path = r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\McAfee\McAfee AntiVirus.lnk"
             os.startfile(path)
-
-        elif 'activate how to do mod' in query:
-            print("Activating how to do mode sir")
-            speak("Activated sir!")
-            speak("What do you want to know sir?")
-            question = takeCommand()
-            max_results = 1
-            how_to = pywikihow.search_wikihow(question, max_results)
-            assert len(how_to) == 1
-            how_to[0].print()
-            speak(how_to[0].summary)
-
-        #in review
-        elif 'play music' in query:
-            musicDir = r"C:\Users\Anmol Raj Soni\Music"
-            songs = os.listdir(musicDir)
-            os.startfile(os.path.join(musicDir, songs[0]))
-
 
         elif 'photos' in query:
             photoDir = r"E:\New folder\family"
